@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&family=Source+Sans+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 80px auto 112px;
+}
+.container p {
+  font-size: 2rem;
+}
+@media (min-width: 600px) and (max-width: 1199px) {
+  .container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+nav {
+  background-color: #5e5e5e;
+  grid-column: span 12;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+}
+nav #ham-menu {
+  display: none;
+}
+nav i {
+  position: relative;
+  top: 2px;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style-type: none;
+}
+nav ul a {
+  transition: all 0.5s;
+  padding: 1rem;
+  color: whitesmoke;
+  text-decoration: none;
+}
+nav ul a.active {
+  color: orange;
+}
+nav ul a:hover {
+  background-color: #333;
+}
+nav ul a:active {
+  color: orange;
+}
+nav ul .down-btn {
+  padding: 1rem;
+  position: relative;
+}
+nav ul .down-btn:hover {
+  background-color: red;
+}
+nav ul .down-btn:hover .down-container {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  flex-direction: column;
+  z-index: 2;
+  background: #C4C4C4;
+  border: 0.2px solid #000000;
+}
+nav ul .down-link {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+nav ul .down-container {
+  display: none;
+}
+@media (max-width: 599px) {
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+  nav #ham-menu {
+    display: block;
+  }
+  nav i {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-20px, 25px);
+  }
+  nav ul {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    left: -100%;
+    transition: all 0.5s;
+    position: fixed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #222;
+    height: calc(100% - 80px);
+    top: 80px;
+    width: 100%;
+  }
+  nav ul.active {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    height: 10vh;
+  }
+  nav ul a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul .down-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+main {
+  background-color: #f6f6f6;
+  grid-column: span 9;
+}
+
+.sidebar {
+  grid-column: span 3;
+}
+.sidebar aside {
+  background-color: #c3c3c3;
+  height: 1000px;
+  border-left: 2px dashed #000000;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 599px) {
+  .sidebar aside {
+    display: none;
+  }
+}
+@media (min-width: 600px) and (max-width: 1199px) {
+  .sidebar aside {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #9c9c9c;
+  grid-column: span 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #c4c4c4;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+}
+.card .title {
+  height: 100px;
+  font-size: 1rem;
+  padding: 1rem;
+  background: #7e7e7e;
+}

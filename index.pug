@@ -1,0 +1,39 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Grids
+        link(href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet")
+        link(rel="stylesheet", href="./style.css")
+        script(src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js") 
+    body
+        .container 
+            nav
+                img(src="./logo.svg", alt="", srcset="" )
+                ul 
+                    each item in ["Home","Services","Author","Products","Contact"]
+                        li 
+                            a(href="#"+item ).nav-link= item
+                    li 
+                        span.down-btn Downlinks 
+                            i.ri-arrow-down-s-fill
+                            .down-container
+                                each ditem in ["Home","Services","Author","Products","Contact"]
+                                    a(href="#").down-link=ditem
+                i.ri-menu-line.ri-2x#ham-menu
+            main
+                .cards-view 
+                    each val in ["Tesla will dramatically expand its Full Self-Driving beta","‘Entourage’ star Kevin Connolly throws tantrum after his Tesla gets towed","Buy these 3 battery stocks to play the electric-vehicle party, but stay away from this company","MoS Finance says high-level committee to look into cryptocurrency", "welcomes citizens view,One Person Or A Small Group Was Behind #RIPElon.",1,2,3,3,2,5,51,5,51,3,13,5,5,5,131,1,31,35,5]
+                        .card
+                            img(src="https://unsplash.com/photos/1gLggrfzlRM/download?force=true&w=640", alt="", srcset="")
+                            p.title= val
+                        
+            div.sidebar
+                aside(data-sticky="true")
+                    p Sidebar 
+            footer 
+                p Footer
+    script(src="./script.js") 
+            
